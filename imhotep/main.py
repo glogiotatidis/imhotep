@@ -1,4 +1,5 @@
 from collections import namedtuple
+import argparse
 import json
 import logging
 import os
@@ -251,9 +252,7 @@ def get_tools(whitelist, known_plugins):
     return tools
 
 
-if __name__ == '__main__':
-    import argparse
-
+def main():
     arg_parser = argparse.ArgumentParser(
         description="Posts static analysis results to github.")
     arg_parser.add_argument(
@@ -334,3 +333,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     imhotep.invoke()
+
+
+if __name__ == '__main__':
+    main()
